@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000";
+const API_URL = "https://career-connect-ai-1.onrender.com";
 
 const queryInput = document.getElementById("careerQuery");
 const analyzeBtn = document.getElementById("analyzeBtn");
