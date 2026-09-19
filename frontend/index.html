@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Connect AI</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="navbar">
+    <a class="brand" href="#">Career<span>Connect</span> AI</a>
+    <span class="status"><span class="dot"></span> AI Career Assistant</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">AI-POWERED CAREER MATCHING</p>
+      <h1>Find your path to the <span>right career.</span></h1>
+      <p class="subtitle">Ask about a company or role. Get a personalized roadmap, projects, interview topics, and relevant alumni or employees.</p>
+
+      <div class="search-box">
+        <textarea id="careerQuery" rows="2" placeholder="e.g. How can I crack a Java backend SDE role at Swiggy?"></textarea>
+        <button id="analyzeBtn">Analyze <span>→</span></button>
+      </div>
+
+      <div class="examples">
+        <span>Try:</span>
+        <button data-query="How can I crack a Software Engineer role at Swiggy?">Swiggy SDE</button>
+        <button data-query="How can I prepare for an Amazon Software Engineer role?">Amazon SDE</button>
+        <button data-query="How can I get a backend developer role?">Backend Developer</button>
+      </div>
+    </section>
+
+    <section id="loading" class="loading hidden">Analyzing your career query...</section>
+    <section id="error" class="error hidden"></section>
+
+    <section id="results" class="results hidden">
+      <div class="target-card">
+        <div>
+          <p class="label">YOUR TARGET</p>
+          <h2 id="targetTitle">Career Target</h2>
+          <p id="targetIntent"></p>
+        </div>
+        <span class="ai-badge">AI ANALYSIS</span>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>🎯 Skills to Learn</h3>
+          <ul id="skillsList"></ul>
+        </article>
+
+        <article class="card">
+          <h3>🚀 Suggested Projects</h3>
+          <ul id="projectsList"></ul>
+        </article>
+
+        <article class="card">
+          <h3>💡 Interview Topics</h3>
+          <ul id="interviewList"></ul>
+        </article>
+
+        <article class="card">
+          <h3>🗺️ Roadmap</h3>
+          <ol id="roadmapList"></ol>
+        </article>
+      </div>
+
+      <section class="section-heading">
+        <p class="label">NETWORK</p>
+        <h2>People who can help you</h2>
+        <p>Relevant employees or alumni from the matching database.</p>
+      </section>
+
+      <div id="matchesList" class="people-grid"></div>
+
+      <section id="messagesSection" class="section-heading">
+        <p class="label">OUTREACH</p>
+        <h2>Personalized networking messages</h2>
+        <p>Use these as a starting point and personalize them before sending.</p>
+      </section>
+      <div id="messagesList" class="messages-grid"></div>
+    </section>
+  </main>
+
+  <footer>Career Connect AI · AI-powered career & alumni matchmaking</footer>
+  <script src="./app.js"></script>
+</body>
+</html>
