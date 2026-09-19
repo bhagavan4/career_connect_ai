@@ -1,0 +1,19 @@
+# Career Connect AI - Python AI service dependencies
+
+# Web API
+fastapi
+uvicorn[standard]
+
+# Configuration
+python-dotenv
+
+# AI
+openai
+
+# Database
+sqlalchemy
+psycopg2-binary
+
+# HTTP / validation
+httpx
+pydantic
