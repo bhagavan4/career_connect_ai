@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
 from app.db.database import get_db
-from app.schemas.career import CareerQueryRequest, CareerQueryResponse, CareerTarget
+from app.schemas.career import CareerQueryRequest
 from app.services.career_service import analyze_career_query
 
 router = APIRouter(prefix="/api/career", tags=["Career"])
