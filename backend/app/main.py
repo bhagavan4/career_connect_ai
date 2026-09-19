@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 
 from app.api.career import router as career_router
+from app.api.employees import router as employees_router
 
 app = FastAPI(
     title="Career Connect AI",
@@ -9,6 +10,7 @@ app = FastAPI(
 )
 
 app.include_router(career_router)
+app.include_router(employees_router)
 
 
 @app.get("/api/health")
