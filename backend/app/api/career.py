@@ -1,17 +1,20 @@
 from fastapi import APIRouter
-from pydantic import BaseModel
+
+from app.schemas.career import CareerQueryRequest, CareerQueryResponse, CareerTarget
+from app.services.query_parser import parse_career_query
 
 router = APIRouter(prefix="/api/career", tags=["Career"])
 
 
-class CareerQuery(BaseModel):
-    query: str
+@router.post("/analyze", response_model=CareerQueryResponse)
+def analyze_career_query(request: CareerQueryRequest):
+    parsed = parse_career_query(request.query)
 
-
-@router.post("/analyze")
-def analyze_career_query(request: CareerQuery):
-    # Basic MVP response. AI query extraction will be added next.
-    return {
-        "query": request.query,
-        "message": "Career query received successfully",
-    }
+    return CareerQueryResponse(
+        query=request.query,
+        target=CareerTarget(
+            company=parsed["company"],
+            role=parsed["role"],
+        ),
+        intent=parsed["intent"],
+    )
