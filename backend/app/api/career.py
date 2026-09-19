@@ -1,20 +1,13 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
+from sqlalchemy.orm import Session
 
+from app.db.database import get_db
 from app.schemas.career import CareerQueryRequest, CareerQueryResponse, CareerTarget
-from app.services.query_parser import parse_career_query
+from app.services.career_service import analyze_career_query
 
 router = APIRouter(prefix="/api/career", tags=["Career"])
 
 
-@router.post("/analyze", response_model=CareerQueryResponse)
-def analyze_career_query(request: CareerQueryRequest):
-    parsed = parse_career_query(request.query)
-
-    return CareerQueryResponse(
-        query=request.query,
-        target=CareerTarget(
-            company=parsed["company"],
-            role=parsed["role"],
-        ),
-        intent=parsed["intent"],
-    )
+@router.post("/analyze", response_model=dict)
+def analyze(request: CareerQueryRequest, db: Session = Depends(get_db)):
+    return analyze_career_query(db=db, query=request.query)
