@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Connect AI Dashboard</title>
+  <link rel="stylesheet" href="./dashboard.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="./index.html">Career<span>Connect</span></a>
+    <nav>
+      <a class="active" href="./dashboard.html">⌂ Dashboard</a>
+      <a href="./index.html">⌕ Career Search</a>
+      <a href="#history">◷ Search History</a>
+      <a href="#profile">♙ My Profile</a>
+    </nav>
+    <div class="sidebar-bottom">
+      <small>Career Connect AI</small>
+      <span>AI Career Assistant</span>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">DASHBOARD</p>
+        <h1>Good luck with your career journey.</h1>
+      </div>
+      <a class="new-search" href="./index.html">+ New Search</a>
+    </header>
+
+    <section class="search-panel">
+      <div>
+        <p class="eyebrow">ASK CAREER CONNECT AI</p>
+        <h2>What career are you targeting?</h2>
+        <p>Get a roadmap, skill suggestions, projects, interview topics and relevant people.</p>
+      </div>
+      <a href="./index.html" class="search-button">Start Career Analysis →</a>
+    </section>
+
+    <section class="stats">
+      <article><strong>AI</strong><span>Career analysis</span></article>
+      <article><strong>4</strong><span>Roadmap sections</span></article>
+      <article><strong>5</strong><span>People matched</span></article>
+      <article><strong>3</strong><span>Networking messages</span></article>
+    </section>
+
+    <section class="two-column">
+      <article class="panel" id="profile">
+        <div class="panel-title"><div><p class="eyebrow">PROFILE</p><h2>Your career profile</h2></div><span class="badge">MVP</span></div>
+        <div class="profile-row"><div class="avatar">U</div><div><h3>Career Explorer</h3><p>Add your skills and target role through the career search.</p></div></div>
+        <div class="skill-pills"><span>Java</span><span>Spring Boot</span><span>SQL</span><span>DSA</span></div>
+      </article>
+
+      <article class="panel" id="history">
+        <div class="panel-title"><div><p class="eyebrow">RECENT</p><h2>How it works</h2></div></div>
+        <ol class="steps">
+          <li><b>01</b><span>Ask a career question</span></li>
+          <li><b>02</b><span>AI identifies your target</span></li>
+          <li><b>03</b><span>Get your personalized roadmap</span></li>
+          <li><b>04</b><span>Connect with relevant people</span></li>
+        </ol>
+      </article>
+    </section>
+
+    <section class="panel roadmap">
+      <div class="panel-title"><div><p class="eyebrow">CAREER FLOW</p><h2>From question to opportunity</h2></div></div>
+      <div class="flow">
+        <div><span>⌕</span><b>Search</b><small>Career question</small></div>
+        <i>→</i>
+        <div><span>✦</span><b>AI Roadmap</b><small>Skills & projects</small></div>
+        <i>→</i>
+        <div><span>♙</span><b>Match</b><small>Employees & alumni</small></div>
+        <i>→</i>
+        <div><span>↗</span><b>Network</b><small>Personalized message</small></div>
+      </div>
+    </section>
+
+    <footer>Career Connect AI · Built as an AI-powered career and alumni matchmaking MVP</footer>
+  </main>
+</body>
+</html>
