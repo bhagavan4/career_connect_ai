@@ -1,0 +1,92 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f6f8fc;
+  line-height: 1.5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+button, textarea { font: inherit; }
+
+.navbar {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  background: white;
+  border-bottom: 1px solid #e8ebf2;
+}
+
+.brand { color: #172033; font-size: 21px; font-weight: 800; text-decoration: none; }
+.brand span { color: #5b5ce2; }
+.status { color: #667085; font-size: 13px; }
+.dot { display: inline-block; width: 8px; height: 8px; background: #22c55e; border-radius: 50%; margin-right: 6px; }
+
+.container { width: min(1100px, 92%); margin: auto; }
+.hero { text-align: center; padding: 72px 0 35px; }
+.eyebrow, .label { color: #5b5ce2; font-size: 12px; font-weight: 800; letter-spacing: 1.5px; margin: 0 0 8px; }
+.hero h1 { max-width: 780px; margin: auto; font-size: clamp(38px, 6vw, 62px); line-height: 1.05; letter-spacing: -2px; }
+.hero h1 span { color: #5b5ce2; }
+.subtitle { max-width: 690px; margin: 20px auto 30px; color: #667085; font-size: 17px; }
+
+.search-box {
+  display: flex; gap: 10px; max-width: 820px; margin: auto; padding: 9px;
+  background: white; border: 1px solid #dfe3ec; border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(30, 41, 59, .08);
+}
+.search-box textarea { flex: 1; border: 0; outline: 0; resize: none; padding: 12px; color: #172033; }
+.search-box button {
+  align-self: stretch; min-width: 125px; border: 0; border-radius: 12px;
+  background: #5b5ce2; color: white; font-weight: 700; cursor: pointer;
+}
+.search-box button:hover { background: #494ac7; }
+.examples { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 14px; color: #98a2b3; font-size: 13px; }
+.examples button { border: 1px solid #e1e5ee; background: white; border-radius: 20px; padding: 7px 12px; color: #475467; cursor: pointer; }
+
+.hidden { display: none !important; }
+.loading, .error { margin: 20px auto; padding: 16px; border-radius: 12px; text-align: center; }
+.loading { background: #eef0ff; color: #4b4ccf; }
+.error { background: #fff1f2; color: #be123c; }
+
+.target-card, .card, .person, .message {
+  background: white; border: 1px solid #e7eaf1; border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(30, 41, 59, .04);
+}
+.target-card { display: flex; justify-content: space-between; align-items: center; padding: 24px; margin-bottom: 18px; }
+.target-card h2 { margin: 0 0 5px; }
+.target-card p:not(.label) { margin: 0; color: #667085; }
+.ai-badge { background: #eef0ff; color: #5051d4; padding: 7px 10px; border-radius: 20px; font-size: 11px; font-weight: 800; }
+
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.card { padding: 22px; }
+.card h3 { margin-top: 0; }
+.card ul, .card ol { padding-left: 22px; margin-bottom: 0; }
+.card li { margin: 9px 0; color: #475467; }
+
+.section-heading { margin: 48px 0 18px; }
+.section-heading h2 { margin: 0 0 5px; }
+.section-heading p:not(.label) { margin: 0; color: #667085; }
+
+.people-grid, .messages-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.person, .message { padding: 20px; }
+.avatar { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 50%; background: #eef0ff; color: #4f50d2; font-weight: 800; }
+.person h3 { margin: 12px 0 3px; }
+.muted { color: #667085; font-size: 13px; margin: 0; }
+.score { display: inline-block; margin-top: 12px; background: #f2f4f7; border-radius: 10px; padding: 5px 8px; font-size: 12px; }
+
+.message { color: #475467; font-size: 14px; }
+.message strong { display: block; color: #172033; margin-bottom: 10px; }
+
+footer { text-align: center; padding: 45px 20px 30px; color: #98a2b3; font-size: 13px; }
+
+@media (max-width: 760px) {
+  .navbar { padding: 0 4%; }
+  .status { display: none; }
+  .hero { padding-top: 45px; }
+  .search-box { flex-direction: column; }
+  .search-box button { min-height: 48px; }
+  .grid, .people-grid, .messages-grid { grid-template-columns: 1fr; }
+  .target-card { align-items: flex-start; gap: 15px; flex-direction: column; }
+}
